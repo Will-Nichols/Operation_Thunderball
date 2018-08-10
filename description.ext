@@ -1,0 +1,30 @@
+OnLoadName = "Operation Thunderball";
+OnLoadMission = "Island of Malden in the Southern Mediterranean Ocean, The 75th Ranger Regiment pushes Iranian Forces out of Malden."
+Author="originally made by AuburnAlumni modified for Task Force Red by (Nichols)";
+overviewPicture = "rangers.jpg";
+
+enableDebugConsole = 1;
+cba_settings_hasSettingsFile = 1;
+
+class Header
+{
+	gameType = COOP; // Game type, see 'class' columns in the table below
+	minPlayers = 4; //min # of players the mission supports
+	maxPlayers = 54; //max # of players the mission supports
+};
+
+respawn = 3;
+respawndelay = 45;
+respawnOnStart = -1;
+respawnDialog = 0;
+DisabledAI = true;
+
+class CfgFunctions 
+{
+	#include "vcom\cfgFunctions.hpp"
+};
+
+class Extended_PreInit_EventHandlers {
+	VCM_CBASettings = call compile preprocessFileLineNumbers "Vcom\Functions\VCM_CBASettings.sqf";
+};
+
